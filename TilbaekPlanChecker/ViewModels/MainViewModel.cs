@@ -50,12 +50,12 @@ namespace ESAPX_StarterUI.ViewModels
         {
             Constraints.AddRange(new PlanConstraint[]
             {
-                new PlanConstraint(ConstraintBuilder.Build("PTV", "Max[%] <= 110")),
+                new PlanConstraint(ConstraintBuilder.Build("PTV", "Max[%] <= 110")), //string constraints can not be set in ESAPI - that is why we use ESAPIX here.. it has more libraries that we are going to use
                 new PlanConstraint(ConstraintBuilder.Build("Breast", "Max[%] <= 107")),
                 new PlanConstraint(ConstraintBuilder.Build("Rectum", "V75Gy[%] <= 15")),
                 new PlanConstraint(ConstraintBuilder.Build("Rectum", "V65Gy[%] <= 35")),
                 new PlanConstraint(ConstraintBuilder.Build("Bladder", "V80Gy[%] <= 15")),
-                //new PlanConstraint(new CTDateConstraint())
+                new PlanConstraint(new CTDateConstraint())
             });
         }
 
